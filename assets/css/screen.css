@@ -45,8 +45,6 @@ h2 {
 
 p {
     font-size: 1.4em;
-}
-p {
     margin-bottom: 0.75em;
 }
 li {
@@ -76,7 +74,7 @@ pre {
 }
 
 header {
-    background: #454b53;
+    background: #333;
     position: absolute;
     width: 100%;
     height: 0.5em;

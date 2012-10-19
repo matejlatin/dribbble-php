@@ -20,7 +20,8 @@
         <p>Using the Wrapper couldn&rsquo;t be easier. Simply include the class file and instantiate it.</p>
         <pre><code>&lt;?php
 
-require '../src/dribbble.php';
+require '../src/Dribbble.php';
+require '../src/Dribbble/Exception.php';
 
 $dribbble = new Dribbble();</code></pre>
         <p>From here, you can then start to call the methods to access the Dribbble API.</p>
@@ -45,7 +46,8 @@ $dribbble = new Dribbble();</code></pre>
         <p>An example usage would be:</p>
         <pre><code>&lt;?php
 
-require '../src/dribbble.php';
+require '../src/Dribbble.php';
+require '../src/Dribbble/Exception.php';
 
 $dribbble = new Dribbble();
 
@@ -59,6 +61,17 @@ catch (DribbbleException $e) {
     echo 'Error: ' . $e->getMessage();
 }</code></pre>
         <p>This would fetch mine (<a href="http://dribbble.com/martinbean" rel="external">martinbean</a>) shots, but catch any exceptions should they arise.</p>
+        <p>You could also paginate the above request. To fetch the second page of my shots, simply use this instead:</p>
+        <pre><code>try {
+    $page = 2;
+    $my_shots_second_page = $dribbble->get_player_shots('martinbean', $page);
+    foreach ($my_shots_second_page->shots as $shot) {
+        echo '&lt;li&gt;&lt;a href="' . $shot->url . '"&gt;' . $shot->title . '&lt;/a&gt;&lt;/li&gt;';
+    }
+}
+catch (DribbbleException $e) {
+    echo 'Error: ' . $e->getMessage();
+}</code></pre>
         <h2>Final notes</h2>
         <p>The Dribbble API PHP Wrapper is released under the MIT License. If you can see any room for improvement feel free to fork this repository and send a pull request.</p>
         <p>Additionally, if you create any thing (i.e. third-party plugins) using the Dribbble API PHP Wrapper then do let me know and I&rsquo;ll mention it here.</p>
