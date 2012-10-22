@@ -72,6 +72,20 @@ catch (DribbbleException $e) {
 catch (DribbbleException $e) {
     echo 'Error: ' . $e->getMessage();
 }</code></pre>
+        <h2>Composer support</h2>
+        <p>The Dribbble API PHP wrapper has been created with support for Composer, a dependency manager for PHP. You can then declare the Dribbble API PHP wrapper as a dependency of your project.</p>
+        <p>The first step is to declare you dependency via a <code>composer.json</code> file in the root of your project:</p>
+        <pre><code>{
+    &quot;require&quot;: {
+        &quot;martinbean/dribbble-php&quot;: &quot;2.1.0&quot;
+    }
+}
+</code></pre>
+        <p>Then, still in your projects root, download the Composer executable:</p>
+        <pre><code>$ curl -s https://getcomposer.org/installer | php</code></pre>
+        <p>Once Composer has been downloaded and installed, you can pull down the Dribbble API PHP wrapper in your project as a dependency with the following command:</p>
+        <pre><code>$ php composer.phar install</code></pre>
+        <p>For more information on Composer, visit <a href="http://getcomposer.org/" rel="external">http://getcomposer.org</a>.</p>
         <h2>Final notes</h2>
         <p>The Dribbble API PHP Wrapper is released under the MIT License. If you can see any room for improvement feel free to fork this repository and send a pull request.</p>
         <p>Additionally, if you create any thing (i.e. third-party plugins) using the Dribbble API PHP Wrapper then do let me know and I&rsquo;ll mention it here.</p>
